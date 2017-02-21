@@ -1,0 +1,15 @@
+---
+
+  - name: Download latest Derby version
+    get_url: url=http://mirrors.standaloneinstaller.com/apache/db/derby/db-derby-10.13.1.1/db-derby-10.13.1.1-bin.tar.gz
+             dest=/tmp
+
+  - name: Create the destination dir
+    file: name=/opt/derby state=directory
+
+  - name: Un-tar
+    unarchive: src=/tmp/db-derby-10.13.1.1-bin.tar.gz dest=/opt/derby copy=no
+
+  - name: Delete previously downloaded file
+    file: name=/tmp/db-derby-10.13.1.1-bin.tar.gz state=absent
+

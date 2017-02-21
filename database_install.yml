@@ -1,9 +1,9 @@
 ---
-- hosts: appserver
+- hosts: database
 
   roles:
     - java
-    - tomcat
+    - derby
 
   environment:
     http_proxy: "{{ httpProxy }}"
