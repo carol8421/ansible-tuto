@@ -1,0 +1,6 @@
+---
+  - name: Install EPEL repository where nginx packages lies.
+    yum: name=epel-release state=latest
+
+  - name: Install nginx webserver
+    yum: name=nginx state=latest
