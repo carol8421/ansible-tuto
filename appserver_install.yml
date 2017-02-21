@@ -1,10 +1,9 @@
 ---
-- hosts: webserver
+- hosts: appserver
 
   roles:
-    - nginx
+    - tomcat
 
   environment:
     http_proxy: "{{ httpProxy }}"
     https_proxy: "{{ httpsProxy }}"
-

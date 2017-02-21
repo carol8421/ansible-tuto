@@ -1,0 +1,18 @@
+---
+
+  - name: Install Java
+    yum: name=java-1.8.0-openjdk-devel state=latest
+
+  - name: Download latest Tomcat version
+    get_url: url=http://apache.mindstudios.com/tomcat/tomcat-8/v8.5.11/bin/apache-tomcat-8.5.11.tar.gz 
+             dest=/tmp
+
+  - name: Create the destination dir
+    file: name=/opt/tomcat state=directory
+
+  - name: Un-tar
+    unarchive: src=/tmp/apache-tomcat-8.5.11.tar.gz dest=/opt/tomcat copy=no
+
+  - name: Delete previously downloaded file
+    file: name=/tmp/apache-tomcat-8.5.11.tar.gz state=absent
+
