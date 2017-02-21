@@ -1,0 +1,9 @@
+---
+  - name: Copy the start script
+    copy: src=roles/derby/templates/start.sh dest=/var/run/start.sh
+
+  - name: Set exec mod on the script
+    file: path=/var/run/start.sh mode=755
+
+  - name: Launch the start script
+    shell: /var/run/start.sh >> /var/log/start.log

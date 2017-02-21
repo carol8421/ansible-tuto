@@ -13,3 +13,4 @@
   - name: Delete previously downloaded file
     file: name=/tmp/db-derby-10.13.1.1-bin.tar.gz state=absent
 
+  - include: start_db.yml
